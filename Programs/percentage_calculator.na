@@ -1,0 +1,49 @@
+"Maximum number of points to be achieved:Points actually achieved:You got%!"
+inc 20
+
+lit 0
+lit 40
+lit 41
+out 2
+
+la 0 32
+la 0 36
+in 0
+
+lit 40
+lit 25
+lit 26
+out 2
+
+la 0 40
+la 0 44
+in 0
+
+la 0 48
+lv 0 40
+lit 100
+mul
+lv 0 32
+div
+sto
+
+out 3
+
+lit 65
+lit 7
+lit 8
+out 2
+
+lv 0 48
+lit 1
+out 0
+
+lit 72
+lit 2
+lit 2
+out 2
+
+out 3
+
+halt
+

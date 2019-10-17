@@ -1,0 +1,94 @@
+"Please enter a number:Please enter a positive number!Prime factors:"
+
+inc 12
+
+# print "Please enter a number: "
+lit 0
+lit 22
+lit 23
+out 2
+
+# get user input
+la 0 32
+la 0 36
+in 0
+
+#check if int is negative
+lv 0 32
+lit 0
+rel 0
+tjmp .error
+
+# print "Prime factors:"
+lit 53
+lit 15
+lit 15
+out 2
+out 3
+
+#if number is 0, 1 or 2 just print it and end
+lv 0 32
+lit 2
+rel 1
+tjmp .printandend
+
+# store first prime number(2)
+la 0 40
+lit 2
+sto
+
+# check if number % prime == 0
+.check
+lv 0 32
+lv 0 40
+mod
+lit 0
+rel 2
+fjmp .addone
+
+# divide number
+la 0 32
+lv 0 32
+lv 0 40
+div
+sto
+
+lv 0 40
+lit 1
+out 0
+out 3
+
+# check if number == 1
+lv 0 32
+lit 1
+rel 2
+tjmp .end
+jmp .check
+
+# add 1 to the prime number
+.addone
+la 0 40
+lv 0 40
+lit 1
+add
+sto
+jmp .check
+
+# print "Please enter a positive number!"
+.error
+lit 22
+lit 31
+lit 32
+out 2
+out 3
+jmp .end
+
+.printandend
+lv 0 32
+lit 1
+out 0
+out 3
+
+.end
+
+halt
